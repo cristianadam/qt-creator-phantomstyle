@@ -25,7 +25,7 @@ public:
         const auto *proxyStyle = qobject_cast<QProxyStyle *>(QApplication::style());
         const bool havePhantom = proxyStyle && proxyStyle->baseStyle()->objectName() == "Phantom";
         if (!havePhantom && !qEnvironmentVariableIsSet("QTCREATOR_USE_DEFAULT_STYLE")) {
-            auto manhattanStyle = new ManhattanStyle(QApplication::style()->name());
+            auto manhattanStyle = new Core::ManhattanStyle(QApplication::style()->name());
             manhattanStyle->setBaseStyle(new PhantomStyle);
 
             QApplication::setStyle(manhattanStyle);
